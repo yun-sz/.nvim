@@ -6,3 +6,7 @@ debug
 foo.*
 *.log
 data
+
+lazy-lock.json
+.neoconfig.json
+lazyvim.json
