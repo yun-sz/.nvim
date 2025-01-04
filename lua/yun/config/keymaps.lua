@@ -8,8 +8,9 @@ keymap.set("n", "<C-a>", "ggVG", opts)
 keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv", opts)
 keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv", opts)
 
--- Handle tabs by using TAB
-vim.keymap.set("n", "<Tab>", function()
+-- Handle buffers
+keymap.set("n", "<leader>q", ":bd<CR>", opts)
+keymap.set("n", "<Tab>", function()
   if vim.fn.tabpagenr("$") > 1 then
     vim.cmd("tabnext")
   else
@@ -17,7 +18,7 @@ vim.keymap.set("n", "<Tab>", function()
   end
 end, opts)
 
-vim.keymap.set("n", "<S-Tab>", function()
+keymap.set("n", "<S-Tab>", function()
   if vim.fn.tabpagenr("$") > 1 then
     vim.cmd("tabprevious")
   else

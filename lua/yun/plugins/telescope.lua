@@ -15,6 +15,13 @@ return {
 
         telescope.setup({
             defaults = {
+                layout_strategy = 'vertical',
+                layout_config = {
+                    vertical = {
+                        mirror = true,
+                    },
+                },
+                sorting_strategy = 'ascending',
                 mappings = {
                     n = {
                         [";g"] = function()
