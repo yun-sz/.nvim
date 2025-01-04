@@ -8,6 +8,7 @@ return {
       "regex",
       "vue",
       "json",
+      "scss",
     },
   },
 }

@@ -33,14 +33,32 @@ return {
         ensure_installed = {
           "lua_ls",
           "ts_ls",
+          "volar",
         },
+
         handlers = {
           function(server_name)
             require("lspconfig")[server_name].setup({
               capabilities = capabilities,
             })
           end,
-
+          ["ts_ls"] = function()
+            local lspconfig = require("lspconfig")
+            lspconfig.ts_ls.setup({
+              capabilities = capabilities,
+              filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+              init_options = {
+                plugins = {
+                  {
+                    name = "@vue/typescript-plugin",
+                    location = vim.fn.stdpath("data")
+                      .. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
+                    languages = { "vue" },
+                  },
+                },
+              },
+            })
+          end,
           ["lua_ls"] = function()
             local lspconfig = require("lspconfig")
             lspconfig.lua_ls.setup({
