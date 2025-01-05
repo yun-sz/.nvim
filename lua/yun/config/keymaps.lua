@@ -1,6 +1,9 @@
 local keymap = vim.keymap
 local opts = { noremap = true }
 
+-- File browser
+keymap.set("n", "<leader>e", vim.cmd.Ex)
+
 -- Allow select all by using cmd + A
 keymap.set("n", "<C-a>", "ggVG", opts)
 
