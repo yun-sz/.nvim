@@ -14,9 +14,13 @@ vim.opt.smartindent = true
 
 vim.opt.wrap = false
 
+local home_dir = os.getenv("HOME") or os.getenv("USERPROFILE")
+local undodir = home_dir .. "/.vim/undodir"
+
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = "~/.config/nvim/undo"
+vim.fn.mkdir(undodir, "p")
+vim.opt.undodir = undodir
 vim.opt.undofile = true
 
 vim.opt.termguicolors = true
