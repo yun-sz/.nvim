@@ -1,7 +1,6 @@
 vim.g.mapleader = " "
 
 vim.opt.nu = true
-
 vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4
@@ -17,6 +16,8 @@ vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
+vim.opt.undodir = "~/.config/nvim/undo"
+vim.opt.undofile = true
 
 vim.opt.termguicolors = true
 

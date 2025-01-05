@@ -28,3 +28,6 @@ keymap.set("n", "<S-Tab>", function()
     vim.cmd("bprevious")
   end
 end, opts)
+
+-- Inc rename
+keymap.set("n", "<leader>rn", ":IncRename ", opts)
