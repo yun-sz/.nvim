@@ -11,6 +11,10 @@ keymap.set("n", "<C-a>", "ggVG", opts)
 keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv", opts)
 keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv", opts)
 
+-- Movements
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
+
 -- Handle buffers
 keymap.set("n", "<leader>q", ":bd<CR>", opts)
 keymap.set("n", "<Tab>", function()
