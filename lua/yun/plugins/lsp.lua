@@ -26,13 +26,7 @@ return {
             local capabilities =
             vim.tbl_deep_extend(
                 "force",
-                {
-                    workspace = {
-                        didChangeWatchedFiles = {
-                            dynamicRegistration = true,
-                        }
-                    }
-                },
+                {},
                 vim.lsp.protocol.make_client_capabilities(),
                 cmp_lsp.default_capabilities()
             )
@@ -53,6 +47,21 @@ return {
                     function(server_name)
                         require("lspconfig")[server_name].setup({
                             capabilities = capabilities,
+                        })
+                    end,
+                    ["gopls"] = function()
+                        local lspconfig = require("lspconfig")
+                        lspconfig.gopls.setup({
+                            capabilities = capabilities,
+                            settings = {
+                                gopls = {
+                                    usePlaceholders = true,
+                                    analyses = {
+                                        unusedparams = true,
+                                    },
+                                    staticcheck = true,
+                                },
+                            },
                         })
                     end,
                     ["ts_ls"] = function()
