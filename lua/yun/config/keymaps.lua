@@ -38,7 +38,3 @@ end, opts)
 
 -- Inc rename
 keymap.set("n", "<leader>rn", ":IncRename ", opts)
-
--- Terminal
-vim.api.nvim_set_keymap('n', '<leader>t', ':belowright split | terminal<CR>i', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('t', '<Esc>', [[<C-\><C-n>]], { noremap = true, silent = true })
