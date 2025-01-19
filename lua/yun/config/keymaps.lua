@@ -39,3 +39,7 @@ end, opts)
 
 -- Inc rename
 keymap.set("n", "<leader>rn", ":IncRename ", opts)
+
+-- Prevent yanks
+vim.keymap.set({"n", "v"}, "<leader>d", "\"_d")
+vim.keymap.set("x", "<leader>p", [["_dP]])
