@@ -10,7 +10,7 @@ return {
                 },
             })
 
-            vim.cmd [[colorscheme rose-pine]]
+            -- vim.cmd [[colorscheme rose-pine]]
         end,
     },
     {
@@ -29,5 +29,11 @@ return {
             require("tokyodark").setup(opts)
             -- vim.cmd [[colorscheme tokyodark]]
         end,
+    },
+    {
+        "ficcdaf/ashen.nvim",
+        config = function()
+           vim.cmd[[colorscheme ashen]]
+        end
     }
 }
