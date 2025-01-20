@@ -33,7 +33,20 @@ return {
     {
         "ficcdaf/ashen.nvim",
         config = function()
-           vim.cmd[[colorscheme ashen]]
+           -- vim.cmd[[colorscheme ashen]]
         end
-    }
+    },
+    {
+        "EdenEast/nightfox.nvim",
+        config = function()
+            require("nightfox").setup({
+                options = {
+                    transparent = true
+                }
+            })
+
+            vim.cmd.colorscheme("nightfox")
+        end
+    },
+    { "rebelot/kanagawa.nvim" }
 }
