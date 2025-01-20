@@ -2,8 +2,8 @@ local keymap = vim.keymap
 local opts = { noremap = true }
 
 -- File browser
--- keymap.set("n", "<leader>e", vim.cmd.Ex)
 keymap.set("n", "<leader>e", ":Neotree toggle<CR>", opts)
+-- keymap.set("n", "<leader>e", vim.cmd.Ex)
 
 -- Allow select all by using cmd + A
 keymap.set("n", "<C-a>", "ggVG", opts)
@@ -21,6 +21,7 @@ keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- Handle buffers
 keymap.set("n", "<leader>q", ":bd<CR>", opts)
+keymap.set("n", "<leader>Q", ":bd!<CR>", opts)
 keymap.set("n", "<Tab>", function()
   if vim.fn.tabpagenr("$") > 1 then
     vim.cmd("tabnext")
@@ -41,5 +42,8 @@ end, opts)
 keymap.set("n", "<leader>rn", ":IncRename ", opts)
 
 -- Prevent yanks
-vim.keymap.set({"n", "v"}, "<leader>d", "\"_d")
-vim.keymap.set("x", "<leader>p", [["_dP]])
+keymap.set({"n", "v"}, "<leader>d", "\"_d")
+keymap.set("x", "<leader>p", [["_dP]])
+
+-- Utils
+keymap.set('n', '<ESC>', ':nohlsearch<CR>', opts)
