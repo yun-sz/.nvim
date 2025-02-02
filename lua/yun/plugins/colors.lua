@@ -31,12 +31,6 @@ return {
         end,
     },
     {
-        "ficcdaf/ashen.nvim",
-        config = function()
-           -- vim.cmd[[colorscheme ashen]]
-        end
-    },
-    {
         "EdenEast/nightfox.nvim",
         config = function()
             require("nightfox").setup({
@@ -45,8 +39,32 @@ return {
                 }
             })
 
-            vim.cmd.colorscheme("terafox")
+            -- vim.cmd.colorscheme("terafox")
         end
     },
-    { "rebelot/kanagawa.nvim" }
+    { "rebelot/kanagawa.nvim" },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+        config = function()
+            require('catppuccin').setup({
+                transparent_background = true
+            })
+
+            -- vim.cmd.colorscheme("catppuccin")
+        end
+    },
+    {
+      'comfysage/evergarden',
+      priority = 1000,
+      config = function ()
+          require("evergarden").setup({
+            transparent_background = true,
+            variant = 'soft',
+          })
+
+          vim.cmd.colorscheme("evergarden")
+      end
+    }
 }
