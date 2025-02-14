@@ -10,7 +10,7 @@ return {
                 },
             })
 
-            -- vim.cmd [[colorscheme rose-pine]]
+            vim.cmd [[colorscheme rose-pine]]
         end,
     },
     {
@@ -64,7 +64,7 @@ return {
             variant = 'soft',
           })
 
-          vim.cmd.colorscheme("evergarden")
+          -- vim.cmd.colorscheme("evergarden")
       end
     }
 }

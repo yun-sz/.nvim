@@ -1,3 +1,5 @@
+local ui = require("utils.ui")
+
 local keymap = vim.keymap
 local opts = { noremap = true }
 
@@ -20,7 +22,7 @@ keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- Handle buffers
-keymap.set("n", "<leader>q", ":bd<CR>", opts)
+keymap.set("n", "<leader>q", ui.bufremove, opts)
 keymap.set("n", "<leader>Q", ":bd!<CR>", opts)
 keymap.set("n", "<Tab>", function()
   if vim.fn.tabpagenr("$") > 1 then
