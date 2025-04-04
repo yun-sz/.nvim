@@ -8,7 +8,7 @@ return {
         local telescope = require("telescope")
 
         vim.keymap.set("n", "sf", builtin.find_files, {})
-        vim.keymap.set("n", "sg", builtin.git_files, {})
+        vim.keymap.set("n", "sg", builtin.live_grep, {})
 
         telescope.setup({
             defaults = {
@@ -22,7 +22,7 @@ return {
                 mappings = {
                     n = {
                         [";g"] = function()
-                            builtin.live_grep({})
+                            builtin.git_files({})
                         end,
                     },
                 },
