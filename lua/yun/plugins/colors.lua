@@ -5,12 +5,19 @@ return {
         config = function()
             require("rose-pine").setup({
                 styles = {
-                    -- transparency = true,
+                    transparency = true, -- mantém os outros grupos "limpos"
                     italic = false,
                 },
             })
 
             vim.cmd [[colorscheme rose-pine]]
+
+            -- força fundo preto absoluto
+            vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
+            vim.api.nvim_set_hl(0, "NormalNC", { bg = "#000000" })
+            vim.api.nvim_set_hl(0, "SignColumn", { bg = "#000000" })
+            vim.api.nvim_set_hl(0, "LineNr", { bg = "#000000" })
+            vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "#000000" })
         end,
     },
     {
@@ -56,15 +63,16 @@ return {
         end
     },
     {
-      'comfysage/evergarden',
-      priority = 1000,
-      config = function ()
-          require("evergarden").setup({
-            transparent_background = true,
-            variant = 'soft',
-          })
+        'comfysage/evergarden',
+        priority = 1000,
+        config = function ()
+            require("evergarden").setup({
+                transparent_background = false,
+                background_color = "#ffffff",
+                variant = 'soft',
+            })
 
-          -- vim.cmd.colorscheme("evergarden")
-      end
+            -- vim.cmd.colorscheme("evergarden")
+        end
     }
 }
