@@ -10,14 +10,12 @@ return {
                 },
             })
 
-            vim.cmd [[colorscheme rose-pine]]
-
-            -- força fundo preto absoluto
-            vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
-            vim.api.nvim_set_hl(0, "NormalNC", { bg = "#000000" })
-            vim.api.nvim_set_hl(0, "SignColumn", { bg = "#000000" })
-            vim.api.nvim_set_hl(0, "LineNr", { bg = "#000000" })
-            vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "#000000" })
+            -- vim.cmd [[colorscheme rose-pine]]
+            -- vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
+            -- vim.api.nvim_set_hl(0, "NormalNC", { bg = "#000000" })
+            -- vim.api.nvim_set_hl(0, "SignColumn", { bg = "#000000" })
+            -- vim.api.nvim_set_hl(0, "LineNr", { bg = "#000000" })
+            -- vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "#000000" })
         end,
     },
     {
@@ -73,6 +71,14 @@ return {
             })
 
             -- vim.cmd.colorscheme("evergarden")
+        end
+    },
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function ()
+            vim.cmd.colorscheme("tokyonight-night")
         end
     }
 }
